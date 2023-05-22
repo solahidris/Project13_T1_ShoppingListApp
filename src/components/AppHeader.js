@@ -20,7 +20,7 @@ const AppHeader = () => {
         </p>
         <p className="text-center text-white text-xs font-mono">work flow</p>
         <p className="center text-white text-xs font-mono line-through">1- main div</p>
-        <p className="center text-white text-xs font-mono line-through">
+        <p className="center text-white text-xs font-mono">
           2- use ul & li for product
         </p>
         <p className="center text-white text-xs font-mono">
