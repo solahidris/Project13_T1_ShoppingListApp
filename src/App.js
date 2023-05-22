@@ -26,6 +26,7 @@ function App() {
         <label className="font-bold">Counter Value = {counter}</label>
         <p>this will later be the</p>
         <p>(number of products instead)</p>
+        <p>changed to other branch now</p>
         </div>
 
         <button onClick={addProductHandler} className="mt-3 ml-3 px-3 py-2 bg-zinc-400 rounded-lg font-bold font-mono text-xs">add product button</button>
