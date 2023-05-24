@@ -75,11 +75,11 @@ function App() {
 
   
   return (
-    <div className="bg-zinc-900 min-h-screen h-max pb-20 overflow-hidden">
+    <div className="bg-zinc-900 min-h-screen h-max pb-20 overflow-auto">
 
       <AppHeader />
 
-      <div className="bg-gray-700 mx-10 lg:mx-[30%] py-5 h-screen rounded-lg overflow-hidden">
+      <div className="bg-gray-700 mx-10 lg:mx-[30%] py-5 h-screen rounded-lg overflow-auto">
 
         <ul className="mt-2 mx-6 py-4 font-mono font-bold tracking-widest text-center text-lg  bg-gray-200 rounded-lg">
           <li>💰 Shopping List 💰</li>
