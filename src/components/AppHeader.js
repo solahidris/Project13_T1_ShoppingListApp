@@ -35,7 +35,7 @@ const AppHeader = () => {
         <p className="center text-white text-xs font-mono line-through">
           6- total item quantity
         </p>
-        <p className="center text-white text-xs font-mono">
+        <p className="center text-white text-xs font-mono line-through">
           7- total item display
         </p>
         <p className="text-center text-white text-sm py-1 font-mono">

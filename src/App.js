@@ -5,14 +5,18 @@ import { useEffect, useState } from "react";
 function App() {
 
   // const [ productTotal, setProductTotal ] = useState([{}]);
-  const [ productTotal, setProductTotal ] = useState([{},{},{},{}]); //DELETE LATER - USE TOP
-  // const [ productUnit, setProductUnit] = useState(0);
+  const [ productTotal, setProductTotal ] = useState([{},{},{},{},{}]);
   const [productUnits, setProductUnits] = useState([]);
-  const [totalProductUnits, setTotalProductUnits] = useState(0);
 
-  const totalProductUnitsHandler = () => {
-    const totalUnits = productUnits.reduce((total, unit) => total + parseInt(unit), 0);
-    setTotalProductUnits(totalUnits);
+  // Total Items: {totalProductItems}</label>
+  const [totalProductItems, setTotalProductItems] = useState(0);
+  
+      
+  const totalProductItemsHandler = () => {
+    const values = productUnits
+    const sum = values.slice(1).reduce((total, number) => total + number, 0);
+    setTotalProductItems(sum);
+    console.log(sum, 'sum');
   };
 
   const productTotalHandler = () => {
@@ -65,21 +69,25 @@ function App() {
   // console.log(template);
   
   useEffect(() => {
-    totalProductUnitsHandler();
+    totalProductItemsHandler();
+    // eslint-disable-next-line
   }, [productUnits]);
 
+  
   return (
-    <div className="bg-zinc-900 min-h-screen h-max pb-10">
+    <div className="bg-zinc-900 min-h-screen h-max pb-20 overflow-hidden">
+
       <AppHeader />
 
-      <div className="bg-gray-700 mx-10 lg:mx-[30%] py-5 h-screen rounded-lg">
+      <div className="bg-gray-700 mx-10 lg:mx-[30%] py-5 h-screen rounded-lg overflow-hidden">
 
         <ul className="mt-2 mx-6 py-4 font-mono font-bold tracking-widest text-center text-lg  bg-gray-200 rounded-lg">
           <li>💰 Shopping List 💰</li>
         </ul>
         
         <div className="flex justify-between mx-6 mt-4">
-         <label className="font-mono text-white text-xs flex items-center">Total Items: {totalProductUnits}</label>
+         <label className="font-mono text-white text-xs flex items-center">
+          Total Items: {totalProductItems}</label>
           <button onClick={productTotalHandler} className="font-mono text-xs bg-gray-400 hover:bg-gray-500 rounded-lg px-4 py-3">Add Product</button>
         </div>
 
