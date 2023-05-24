@@ -1,11 +1,13 @@
 import "./App.css";
 import AppHeader from "./components/AppHeader";
 import { useEffect, useState } from "react";
+import AppTitle from "./components/AppTitle";
+import TotalItems from "./components/TotalItems";
+import AddProduct from "./components/AddProduct";
 
 function App() {
 
-  // const [ productTotal, setProductTotal ] = useState([{}]);
-  const [ productTotal, setProductTotal ] = useState([{},{},{},{},{}]);
+  const [ productTotal, setProductTotal ] = useState([{},{}]);
   const [productUnits, setProductUnits] = useState([]);
 
   // Total Items: {totalProductItems}</label>
@@ -76,23 +78,14 @@ function App() {
   
   return (
     <div className="bg-zinc-900 min-h-screen h-max pb-20 overflow-auto">
-
       <AppHeader />
-
       <div className="bg-gray-700 mx-10 lg:mx-[30%] py-5 h-screen rounded-lg overflow-auto">
-
-        <ul className="mt-2 mx-6 py-4 font-mono font-bold tracking-widest text-center text-lg  bg-gray-200 rounded-lg">
-          <li>💰 Shopping List 💰</li>
-        </ul>
-        
+        <AppTitle />
         <div className="flex justify-between mx-6 mt-4">
-         <label className="font-mono text-white text-xs flex items-center">
-          Total Items: {totalProductItems}</label>
-          <button onClick={productTotalHandler} className="font-mono text-xs bg-gray-400 hover:bg-gray-500 rounded-lg px-4 py-3">Add Product</button>
+          <TotalItems totalProductItems={totalProductItems} />
+          <AddProduct productTotalHandler={productTotalHandler} />
         </div>
-
         <div>{template}</div>
-
       </div>
     </div>
   );
